@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svedmyra Tunnelbana Departures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚇 Svedmyra Tunnelbana</h1>
+            <p class="subtitle">Next departures towards T-Centralen</p>
+        </header>
+
+        <div class="controls">
+            <button id="refresh-btn" class="refresh-button">
+                <span class="refresh-icon">🔄</span>
+                Refresh
+            </button>
+            <div class="last-updated">
+                Last updated: <span id="last-updated-time">Never</span>
+            </div>
+        </div>
+
+        <div class="departures-container">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading departures...</p>
+            </div>
+            
+            <div id="error" class="error hidden">
+                <p>⚠️ Failed to load departure information</p>
+                <p class="error-details" id="error-details"></p>
+            </div>
+
+            <div id="departures-list" class="departures-list hidden">
+                <!-- Departures will be populated here -->
+            </div>
+        </div>
+
+        <div class="info">
+            <p>⏱️ Auto-refresh every minute</p>
+            <p>🎯 Showing next 4 departures to T-Centralen</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
