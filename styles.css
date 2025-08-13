@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(0, 120, 191, 0.8) 0%, rgba(0, 90, 150, 0.6) 100%);
     min-height: 100vh;
     color: #333;
 }
@@ -36,13 +36,14 @@ header h1 {
 
 .controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     padding: 15px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 120, 191, 0.2);
 }
 
 .refresh-button {
@@ -96,7 +97,7 @@ header h1 {
     width: 40px;
     height: 40px;
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #667eea;
+    border-top: 4px solid #0078bf;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 20px;
@@ -178,7 +179,7 @@ header h1 {
     padding: 20px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 10px;
-    border-left: 5px solid #007bff;
+    border-left: 5px solid #0078bf;
     transition: all 0.3s ease;
 }
 
@@ -191,16 +192,17 @@ header h1 {
     flex: 1;
 }
 
-.line-info {
-    font-size: 1.2rem;
+.destination {
+    font-size: 1.5rem;
     font-weight: 600;
-    color: #007bff;
+    color: #333;
     margin-bottom: 5px;
 }
 
-.destination {
+.line-info {
     font-size: 1rem;
-    color: #666;
+    color: #0078bf;
+    font-weight: 500;
 }
 
 .time-info {
@@ -223,11 +225,20 @@ header h1 {
     text-align: center;
     color: white;
     opacity: 0.8;
+    margin-bottom: 20px;
 }
 
 .info p {
     margin: 5px 0;
     font-size: 0.9rem;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
 }
 
 /* Responsive design */
@@ -241,9 +252,11 @@ header h1 {
     }
 
     .controls {
-        flex-direction: column;
-        gap: 15px;
         text-align: center;
+    }
+
+    .bottom-controls {
+        padding: 15px;
     }
 
     .departure-item {

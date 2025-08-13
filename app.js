@@ -133,8 +133,8 @@ class SLDepartureApp {
 
         div.innerHTML = `
             <div class="departure-info">
-                <div class="line-info">Line ${lineNumber}</div>
                 <div class="destination">→ ${destination}</div>
+                <div class="line-info">Line ${lineNumber}</div>
             </div>
             <div class="time-info">
                 <div class="minutes-left">${minutesLeft}</div>
