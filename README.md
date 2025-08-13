@@ -173,16 +173,29 @@ The app is built with vanilla HTML, CSS, and JavaScript - no build process requi
    - Make changes to HTML/CSS/JS files
    - Refresh browser to see changes
 
+## 🍓 Raspberry Pi Deployment
+
+Want to host this on your local network for all devices to access? 
+
+**👉 See [RASPBERRY_PI_SETUP.md](RASPBERRY_PI_SETUP.md) for complete deployment instructions!**
+
+Perfect for:
+- 📱 Family dashboard on phones/tablets
+- 🖥️ Kitchen display computer  
+- 📺 Smart TV browser
+- 🏠 Home automation integration
+
 ### 📁 Project Structure
 
 ```
 sl-api-sandbox/
-├── index.html          # Main HTML file
-├── styles.css          # All styling and responsive design
-├── app.js             # JavaScript application logic
-├── server.py          # Local development server
-├── README.md          # Documentation (this file)
-└── about.md           # Original project requirements
+├── index.html              # Main HTML file
+├── styles.css              # All styling and responsive design
+├── app.js                 # JavaScript application logic
+├── server.py              # Network-ready server
+├── README.md              # Documentation (this file)
+├── RASPBERRY_PI_SETUP.md  # Raspberry Pi deployment guide
+└── about.md               # Original project requirements
 ```
 
 ### 🔧 Development Tips
