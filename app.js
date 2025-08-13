@@ -52,7 +52,13 @@ class SLDepartureApp {
             this.displayDepartures(response);
         } catch (error) {
             console.error('Error loading departures:', error);
-            this.showError(error.message);
+            
+            // Check if we're offline
+            if (!navigator.onLine) {
+                this.showError('You appear to be offline. Please check your internet connection and try again.');
+            } else {
+                this.showError(error.message);
+            }
         }
     }
 
@@ -260,6 +266,28 @@ class SLDepartureApp {
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new SLDepartureApp();
+    
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('✅ Service Worker registered successfully:', registration.scope);
+                
+                // Check for updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('🔄 New version available! Refresh to update.');
+                            // Could show a notification to user here
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.log('❌ Service Worker registration failed:', error);
+            });
+    }
 });
 
 // Show app status message
