@@ -188,6 +188,8 @@ class SLDepartureApp {
         return '';
     }
 
+
+
     showLoading() {
         document.getElementById('loading').classList.remove('hidden');
         document.getElementById('departures-list').classList.add('hidden');
